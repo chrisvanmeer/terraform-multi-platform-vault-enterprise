@@ -12,7 +12,7 @@ So, I decided to try to accomplish the following with the rule of thirds:
   - [ ] AWS
   - [x] Azure
   - [x] GCP
-- [x] Within these 3 cloud providers, all cluster nodes are automatically spread over 3 zones within one randomly chosen region.
+- [ ] Within these 3 cloud providers, all cluster nodes are automatically spread over 3 zones within one randomly chosen region.
   - [ ] AWS
   - [ ] Azure
   - [x] GCP
