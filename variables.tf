@@ -19,21 +19,18 @@ variable "google_provider_project" {
   default = "chrisvmcloud"
 }
 
-variable "google_provider_region" {
-  default = "europe-central2"
-}
+# variable "google_provider_region" {
+#   default = "europe-west2"
+# }
 
-variable "google_provider_zone" {
-  default = "europe-central2-a"
-}
-
-variable "google_instance_zones" {
-  type    = list(string)
-  default = ["europe-central2-a", "europe-central2-b", "europe-central2-c"]
-}
+# variable "google_instance_zones" {
+#   type    = list(string)
+#   default = ["europe-central2-a", "europe-central2-b", "europe-central2-c"]
+# }
 
 variable "google_instance_machine_type" {
-  default = "f1-micro"
+  # default = "f1-micro"
+  default = "e2-micro"
 }
 
 variable "google_instance_count" {
