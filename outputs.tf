@@ -13,3 +13,11 @@ output "azure_vault_adddresses" {
     azurerm_linux_virtual_machine.azure_vault[*].public_ip_address
   )
 }
+
+output "aws_vault_adddresses" {
+  value = formatlist(
+    "%s: %s",
+    aws_instance.aws-vault[*].tags.Name,
+    aws_instance.aws-vault[*].public_ip
+  )
+}

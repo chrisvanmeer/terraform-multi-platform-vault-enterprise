@@ -8,6 +8,10 @@ variable "ssh_pub_key_file" {
   default = "/Users/chris/.ssh/id_rsa.pub"
 }
 
+variable "ssh_priv_key_file" {
+  default = "/Users/chris/.ssh/id_rsa"
+}
+
 variable "vault_tcp_ports" {
   type    = list(string)
   default = ["8200", "8201"]
@@ -63,4 +67,11 @@ variable "azure_instance_image_sku" {
 }
 variable "azure_instance_image_version" {
   default = "latest"
+}
+
+
+#### AWS
+
+variable "aws_instance_type" {
+  default = "t2.micro"
 }

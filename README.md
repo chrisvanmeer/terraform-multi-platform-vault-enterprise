@@ -6,22 +6,22 @@ Within this setup I want to try a master/performance/disaster cluster replicatio
 
 So, I decided to try to accomplish the following with the rule of thirds:
 
-- [ ] Create 3 separate Vault clusters.
-- [ ] All 3 clusters consist of 3 Vault servers.
-- [ ] All 3 clusters are spread over 3 cloud providers.
-  - [ ] AWS
+- [x] Create 3 separate Vault clusters.
+- [x] All 3 clusters consist of 3 Vault servers.
+- [x] All 3 clusters are spread over 3 cloud providers.
+  - [x] AWS
   - [x] Azure
   - [x] GCP
 - [ ] Within these 3 cloud providers, all cluster nodes are automatically spread over 3 zones within one randomly chosen region.
-  - [ ] AWS
+  - [x] AWS
   - [ ] Azure
   - [x] GCP
-- [ ] Have Vault Enterprise installed on these 3*3 VM instances.
-  - [ ] AWS
+- [x] Have Vault Enterprise installed on these 3*3 VM instances.
+  - [x] AWS
   - [x] Azure
   - [x] GCP
-- [ ] Have the Vault ports publicly accessible between the 3*3 VM instances.
-  - [ ] AWS
+- [x] Have the Vault ports publicly accessible between the 3*3 VM instances.
+  - [x] AWS
   - [x] Azure
   - [x] GCP
 
@@ -43,3 +43,7 @@ And it's all for testing purposes, remember that.
 So, built the majority of the Azure functionality into the scripts.  
 I still need to figure out how to spread the VM's across different zones.  
 But hey, there's always room for improvement.
+
+## Captain's Log Stardate 100097.19
+
+AWS is also ready.  

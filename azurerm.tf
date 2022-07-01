@@ -26,6 +26,7 @@ resource "azurerm_public_ip" "azure_vault_public_ip" {
   location            = var.azure_resource_group_location
   allocation_method   = "Dynamic"
   count               = var.vault_instance_count
+  sku                 = "Standard"
 }
 
 resource "azurerm_network_interface" "vault_nic" {
