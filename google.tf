@@ -53,5 +53,5 @@ resource "google_compute_firewall" "vault-server" {
   }
 
   source_ranges = ["0.0.0.0/0"]
-  target_tags   = ["vault"]
+  target_tags   = var.google_instance_tags
 }
