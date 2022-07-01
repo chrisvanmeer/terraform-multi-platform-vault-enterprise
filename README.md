@@ -25,6 +25,10 @@ So, I decided to try to accomplish the following with the rule of thirds:
   - [ ] Azure
   - [x] GCP
 
+## Schematic overview
+
+![Schematic overview](multi-platform-vault-enterprise.png)
+
 ## Captain's Log Stardate 100096.25
 
 I managed to do all the thinking and scripting for one provider, in this case GCP.  
