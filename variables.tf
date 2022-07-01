@@ -13,28 +13,19 @@ variable "vault_tcp_ports" {
   default = ["8200", "8201"]
 }
 
+variable "vault_instance_count" {
+  default = 3
+}
+
+
 #### GOOGLE
 
 variable "google_provider_project" {
-  default = "chrisvmcloud"
+  default = "projectname"
 }
-
-# variable "google_provider_region" {
-#   default = "europe-west2"
-# }
-
-# variable "google_instance_zones" {
-#   type    = list(string)
-#   default = ["europe-central2-a", "europe-central2-b", "europe-central2-c"]
-# }
 
 variable "google_instance_machine_type" {
-  # default = "f1-micro"
   default = "e2-micro"
-}
-
-variable "google_instance_count" {
-  default = 3
 }
 
 variable "google_instance_image" {
@@ -43,4 +34,33 @@ variable "google_instance_image" {
 
 variable "google_instance_tags" {
   default = ["vault"]
+}
+
+#### AZURE
+
+variable "azure_resource_group_name" {
+  default = "resourcegroupname"
+}
+
+variable "azure_resource_group_location" {
+  default = "resourcegrouplocation"
+}
+
+variable "azure_instance_machine_type" {
+  default = "Standard_B1s"
+}
+
+variable "azure_instance_image_offer" {
+  default = "0001-com-ubuntu-server-focal"
+}
+
+variable "azure_instance_image_publisher" {
+  default = "Canonical"
+}
+
+variable "azure_instance_image_sku" {
+  default = "20_04-lts-gen2"
+}
+variable "azure_instance_image_version" {
+  default = "latest"
 }

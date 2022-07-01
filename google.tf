@@ -1,6 +1,5 @@
 provider "google" {
   project = var.google_provider_project
-  # region  = var.google_provider_region
 }
 
 data "google_compute_regions" "available" {
@@ -22,7 +21,7 @@ resource "google_compute_instance" "google_vault" {
   name         = "google-vault-${count.index}"
   hostname     = "google-vault-${count.index}.google.cloud"
   machine_type = var.google_instance_machine_type
-  count        = var.google_instance_count
+  count        = var.vault_instance_count
   zone         = random_shuffle.google_zones.result[count.index]
   boot_disk {
     initialize_params {

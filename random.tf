@@ -1,3 +1,0 @@
-provider "random" {
-  # Configuration options
-}
