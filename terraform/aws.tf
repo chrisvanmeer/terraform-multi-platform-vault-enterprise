@@ -40,7 +40,6 @@ resource "aws_instance" "aws_vault" {
   instance_type     = var.aws_instance_type
   key_name          = aws_key_pair.key.key_name
   count             = var.vault_instance_count
-  user_data         = file("${path.module}/install.sh")
 
   tags = {
     Name = "aws-vault-${count.index}"

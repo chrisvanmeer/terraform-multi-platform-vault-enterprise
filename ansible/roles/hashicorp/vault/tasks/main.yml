@@ -1,4 +1,8 @@
 ---
+- name: Ensure Vault Enterprise is installed.
+  include_role:
+    name: chrisvanmeer.hashicorp
+
 - name: Preparations.
   include_tasks: preparations.yml
 

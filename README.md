@@ -16,7 +16,7 @@ So, I decided to try to accomplish the following with the rule of thirds:
   - [x] AWS
   - [ ] Azure
   - [x] GCP
-- [x] Have Vault Enterprise installed on these 3*3 VM instances.
+- [x] Have ~~~Terraform~~~ Ansible install Vault Enterprise on these 3*3 VM instances.
   - [x] AWS
   - [x] Azure
   - [x] GCP

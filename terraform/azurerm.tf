@@ -2,10 +2,6 @@ provider "azurerm" {
   features {}
 }
 
-data "template_file" "vault_install" {
-  template = file("${path.module}/install.sh")
-}
-
 resource "azurerm_virtual_network" "vault_virtual_network" {
   name                = "vault-network"
   address_space       = ["10.0.0.0/16"]
@@ -83,7 +79,6 @@ resource "azurerm_linux_virtual_machine" "azure_vault" {
   location            = var.azure_resource_group_location
   size                = var.azure_instance_machine_type
   admin_username      = var.ssh_user
-  custom_data         = base64encode(data.template_file.vault_install.rendered)
   count               = var.vault_instance_count
 
   network_interface_ids = [

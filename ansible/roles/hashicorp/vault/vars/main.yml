@@ -1,6 +1,4 @@
 ---
-hashicorp_datacenter_name: "cloud"
-
 vault_binary: "/usr/bin/vault"
 vault_etc_directory: "/etc/vault.d"
 vault_data_directory: "/opt/vault/data"
@@ -11,21 +9,6 @@ vault_service_name: "vault"
 vault_service_user: "vault"
 vault_service_group: "vault"
 vault_systemd_service_file: "/etc/systemd/system/vault.service"
-
-vault_syslog_tag: "vault"
-vault_syslog_facility: "AUTH"
-vault_log_filename: "audit.log"
-vault_log_directory: "/var/log/vault"
-vault_log_location: "{{ vault_log_directory }}/{{ vault_log_filename }}"
-vault_log_template_local: "vault.logrotate.j2"
-vault_log_rotate_dir: "/etc/logrotate.d"
-vault_log_rotate_filename: "vault"
-vault_log_rotate_count: "7"
-vault_log_rotation_interval: "daily"
-vault_log_extension: "log"
-vault_log_dateformat: "%Y-%m-%d."
-vault_log_directory_user: "vault"
-vault_log_directory_group: "vault"
 
 vault_address: "https://127.0.0.1:8200"
 

@@ -4,8 +4,44 @@
     - all
   become: true
 
+  vars:
+    hashicorp_product_selection:
+      - vault-enterprise
+    basic_apt_packages:
+      - atop
+      - curl
+      - git
+      - htop
+      - iotop
+      - iperf3
+      - iputils-ping
+      - jq
+      - multitail
+      - neofetch
+      - net-tools
+      - nload
+      - nmap
+      - openssl
+      - screen
+      - sysstat
+      - tcpdump
+      - telnet
+      - traceroute
+      - tree
+      - vim
+      - wget
+
   roles:
-    - name: geerlingguy.ntp
-      role: geerlingguy.ntp
-    - name: hashicorp/vault
+    - name: HashiCorp Vault
       role: hashicorp/vault
+
+  tasks:
+    - name: Ensure apt is updated.
+      apt:
+        update_cache: true
+        cache_valid_time: 3600
+
+    - name: Ensure basic apt packages are present.
+      apt:
+        name: "{{ basic_apt_packages }}"
+        state: present

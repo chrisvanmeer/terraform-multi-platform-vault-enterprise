@@ -5,4 +5,4 @@ collections:
   - name: community.hashi_vault
   - name: community.crypto
 roles:
-  - name: geerlingguy.ntp
+  - name: chrisvanmeer.hashicorp

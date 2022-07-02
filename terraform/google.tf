@@ -23,6 +23,8 @@ resource "google_compute_instance" "google_vault" {
   machine_type = var.google_instance_machine_type
   count        = var.vault_instance_count
   zone         = random_shuffle.google_zones.result[count.index]
+  tags         = var.google_instance_tags
+
   boot_disk {
     initialize_params {
       image = var.google_instance_image
@@ -38,8 +40,6 @@ resource "google_compute_instance" "google_vault" {
     ssh-keys = "${var.ssh_user}:${file(var.ssh_pub_key_file)}"
   }
 
-  metadata_startup_script = file("${path.module}/install.sh")
-  tags                    = var.google_instance_tags
 }
 
 resource "google_compute_firewall" "vault-server" {
