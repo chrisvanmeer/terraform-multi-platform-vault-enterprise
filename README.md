@@ -31,6 +31,25 @@ So, I decided to try to accomplish the following with the rule of thirds:
 
 ![Schematic overview](assets/multi-platform-vault-enterprise.png)
 
+## Rundown
+
+### 1. Infrastructure as Code
+
+```shell
+cd terraform
+terraform init
+terraform plan
+terraform apply
+```
+
+### 2. Configuration management
+
+```shell
+cd ../ansible
+ansible-galaxy install -r requirements.yml
+ansible-playbook playbook.yml
+```
+
 ## Captain's Log Stardate 100096.25
 
 I managed to do all the thinking and scripting for one provider, in this case GCP.  
