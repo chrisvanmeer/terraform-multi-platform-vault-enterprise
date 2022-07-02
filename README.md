@@ -83,3 +83,7 @@ And last but not least, why don't throw in the output of `terraform graph` for s
 ![Terraform Graph](terraform/graph.png)
 
 I also created a vault role, which is 90% done I think. Need some more time to think it over and then proceed with testing.
+
+## Captain's Log Stardate 100098.95
+
+I decided to remove all the pre-provisioning from Terraform to keep Terraform just for the IaC and have Ansible for configuration management and have it install the binary as part of the role (with the help of my existing HashiCorp role).
