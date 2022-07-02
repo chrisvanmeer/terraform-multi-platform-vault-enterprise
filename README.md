@@ -24,11 +24,12 @@ So, I decided to try to accomplish the following with the rule of thirds:
   - [x] AWS
   - [x] Azure
   - [x] GCP
+- [x] Have Terraform generate an Ansible inventory which then can be used for deployment
 - [ ] Have Ansible deploy the general configuration
 
 ## Schematic overview
 
-![Schematic overview](draw-io/multi-platform-vault-enterprise.png)
+![Schematic overview](assets/multi-platform-vault-enterprise.png)
 
 ## Captain's Log Stardate 100096.25
 
@@ -48,3 +49,37 @@ But hey, there's always room for improvement.
 ## Captain's Log Stardate 100097.19
 
 AWS is also ready.  
+
+## Captain's Log Stardate 100098.58
+
+Woke up early today (kids...you get so much joy...) so what better way to start the day than with continuing our saga.  
+So, I like Terraform, but I like Ansible even more. So now that our infrastructure is ready, I wanted to continue the configuration management with Ansible. To do this, I added a template and another Terraform resource that creates an inventory for me, that can then be used by Ansible.  
+
+But...first I needed to re-organize the directory structure, since a whole lot of files in the root is a bit messy.  
+After that I managed to get that inventory file pretty quickly and I thought it would be nice to show some screenshots of the end-state of the `terraform plan` and then the Ansible part.
+
+### AWS Console
+
+![AWS Console](assets/aws_console.png)
+
+### Azure Console
+
+![Azure Console](assets/azure_console.png)
+
+### Google Console
+
+![Google Console](assets/google_console.png)
+
+### Ansible inventory file
+
+![Ansible Inventory](assets/ansible_inventory.png)
+
+### Ansible "hello world" by using ping
+
+![Ansible Inventory](assets/ansible_ping.png)
+
+And last but not least, why don't throw in the output of `terraform graph` for some light reading...simple right?
+
+![Terraform Graph](terraform/graph.png)
+
+I also created a vault role, which is 90% done I think. Need some more time to think it over and then proceed with testing.
