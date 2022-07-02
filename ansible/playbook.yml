@@ -1,0 +1,11 @@
+---
+- name: Vault Enterprise Configuration
+  hosts:
+    - all
+  become: true
+
+  roles:
+    - name: geerlingguy.ntp
+      role: geerlingguy.ntp
+    - name: hashicorp/vault
+      role: hashicorp/vault

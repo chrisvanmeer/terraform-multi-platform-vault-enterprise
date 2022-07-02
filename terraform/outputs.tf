@@ -17,7 +17,7 @@ output "azure_vault_adddresses" {
 output "aws_vault_adddresses" {
   value = formatlist(
     "%s: %s",
-    aws_instance.aws-vault[*].tags.Name,
-    aws_instance.aws-vault[*].public_ip
+    aws_instance.aws_vault[*].tags.Name,
+    aws_instance.aws_vault[*].public_ip
   )
 }

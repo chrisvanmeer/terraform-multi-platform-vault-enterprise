@@ -1,0 +1,14 @@
+[google]
+%{ for name, ip in google ~}
+${name} ansible_host=${ip}
+%{ endfor ~}
+
+[azure]
+%{ for name, ip in azure ~}
+${name} ansible_host=${ip}
+%{ endfor ~}
+
+[aws]
+%{ for name, ip in aws ~}
+${name} ansible_host=${ip}
+%{ endfor ~}

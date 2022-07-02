@@ -1,0 +1,53 @@
+---
+hashicorp_datacenter_name: "cloud"
+
+vault_binary: "/usr/bin/vault"
+vault_etc_directory: "/etc/vault.d"
+vault_data_directory: "/opt/vault/data"
+vault_data_directory_user: "vault"
+vault_data_directory_group: "vault"
+vault_tls_directory: "/opt/vault/tls"
+vault_service_name: "vault"
+vault_service_user: "vault"
+vault_service_group: "vault"
+vault_systemd_service_file: "/etc/systemd/system/vault.service"
+
+vault_syslog_tag: "vault"
+vault_syslog_facility: "AUTH"
+vault_log_filename: "audit.log"
+vault_log_directory: "/var/log/vault"
+vault_log_location: "{{ vault_log_directory }}/{{ vault_log_filename }}"
+vault_log_template_local: "vault.logrotate.j2"
+vault_log_rotate_dir: "/etc/logrotate.d"
+vault_log_rotate_filename: "vault"
+vault_log_rotate_count: "7"
+vault_log_rotation_interval: "daily"
+vault_log_extension: "log"
+vault_log_dateformat: "%Y-%m-%d."
+vault_log_directory_user: "vault"
+vault_log_directory_group: "vault"
+
+vault_address: "https://127.0.0.1:8200"
+
+vault_bootstrap_init_local_path: "tokens/vault.master.keys"
+
+vault_ssl_cert_filename: "vault-cert.pem"
+vault_ssl_key_filename: "vault-key.pem"
+vault_ssl_ca_filename: "vault-ca.pem"
+vault_ssl_ca_key_filename: "vault-ca-key.pem"
+vault_ssl_ca_share_filename: "vault-root-ca.crt"
+
+vault_ssl_base_path: "/opt/vault/tls"
+vault_ssl_cert_dest: "{{ vault_ssl_base_path }}/{{ vault_ssl_cert_filename }}"
+vault_ssl_key_dest: "{{ vault_ssl_base_path }}/{{ vault_ssl_key_filename }}"
+vault_ssl_ca_dest: "{{ vault_ssl_base_path }}/{{ vault_ssl_ca_filename }}"
+vault_ssl_ca_key_dest: "{{ vault_ssl_base_path }}/{{ vault_ssl_ca_key_filename }}"
+
+vault_ssl_ca_common_name: "Vault CA"
+vault_ssl_server_common_name: "vault.cloud"
+vault_ssl_server_subject_alt_names:
+  - "DNS:{{ vault_ssl_server_common_name }}"
+  - "DNS:*.{{ vault_ssl_server_common_name }}"
+  - "IP:127.0.0.1"
+
+vault_ssl_local_dir: "/usr/local/share/ca-certificates"

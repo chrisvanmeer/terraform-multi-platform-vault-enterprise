@@ -1,0 +1,6 @@
+---
+- name: Ensure systemd service is enabled and started.
+  systemd:
+    name: "{{ vault_service_name }}"
+    enabled: true
+    state: started

@@ -24,10 +24,11 @@ So, I decided to try to accomplish the following with the rule of thirds:
   - [x] AWS
   - [x] Azure
   - [x] GCP
+- [ ] Have Ansible deploy the general configuration
 
 ## Schematic overview
 
-![Schematic overview](multi-platform-vault-enterprise.png)
+![Schematic overview](draw-io/multi-platform-vault-enterprise.png)
 
 ## Captain's Log Stardate 100096.25
 

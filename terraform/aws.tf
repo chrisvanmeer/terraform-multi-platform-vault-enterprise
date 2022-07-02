@@ -34,7 +34,7 @@ resource "aws_key_pair" "key" {
   key_name   = "${random_pet.keyname.id}-vault-key"
   public_key = file(var.ssh_pub_key_file)
 }
-resource "aws_instance" "aws-vault" {
+resource "aws_instance" "aws_vault" {
   ami               = data.aws_ami.ubuntu.id
   availability_zone = random_shuffle.aws_zones.result[0]
   instance_type     = var.aws_instance_type

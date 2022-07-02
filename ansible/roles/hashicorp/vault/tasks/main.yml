@@ -1,0 +1,12 @@
+---
+- name: Preparations.
+  include_tasks: preparations.yml
+
+- name: Configuration.
+  include_tasks: configuration.yml
+
+- name: Public Key Infrastructure.
+  include_tasks: pki.yml
+
+- name: Startup.
+  include_tasks: startup.yml

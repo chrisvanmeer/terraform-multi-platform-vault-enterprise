@@ -1,0 +1,136 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] aws_instance.aws_vault (expand)" [label = "aws_instance.aws_vault", shape = "box"]
+		"[root] aws_key_pair.key (expand)" [label = "aws_key_pair.key", shape = "box"]
+		"[root] azurerm_linux_virtual_machine.azure_vault (expand)" [label = "azurerm_linux_virtual_machine.azure_vault", shape = "box"]
+		"[root] azurerm_network_interface.vault_nic (expand)" [label = "azurerm_network_interface.vault_nic", shape = "box"]
+		"[root] azurerm_network_interface_security_group_association.association (expand)" [label = "azurerm_network_interface_security_group_association.association", shape = "box"]
+		"[root] azurerm_network_security_group.vault_nsg (expand)" [label = "azurerm_network_security_group.vault_nsg", shape = "box"]
+		"[root] azurerm_public_ip.azure_vault_public_ip (expand)" [label = "azurerm_public_ip.azure_vault_public_ip", shape = "box"]
+		"[root] azurerm_subnet.vault_subnet (expand)" [label = "azurerm_subnet.vault_subnet", shape = "box"]
+		"[root] azurerm_virtual_network.vault_virtual_network (expand)" [label = "azurerm_virtual_network.vault_virtual_network", shape = "box"]
+		"[root] data.aws_ami.ubuntu (expand)" [label = "data.aws_ami.ubuntu", shape = "box"]
+		"[root] data.aws_availability_zones.available (expand)" [label = "data.aws_availability_zones.available", shape = "box"]
+		"[root] data.google_compute_regions.available (expand)" [label = "data.google_compute_regions.available", shape = "box"]
+		"[root] data.google_compute_zones.available (expand)" [label = "data.google_compute_zones.available", shape = "box"]
+		"[root] data.template_file.vault_install (expand)" [label = "data.template_file.vault_install", shape = "box"]
+		"[root] google_compute_firewall.vault-server (expand)" [label = "google_compute_firewall.vault-server", shape = "box"]
+		"[root] google_compute_instance.google_vault (expand)" [label = "google_compute_instance.google_vault", shape = "box"]
+		"[root] local_file.ansible_inventory (expand)" [label = "local_file.ansible_inventory", shape = "box"]
+		"[root] output.aws_vault_adddresses" [label = "output.aws_vault_adddresses", shape = "note"]
+		"[root] output.azure_vault_adddresses" [label = "output.azure_vault_adddresses", shape = "note"]
+		"[root] output.google_vault_adddresses" [label = "output.google_vault_adddresses", shape = "note"]
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" [label = "provider[\"registry.terraform.io/hashicorp/aws\"]", shape = "diamond"]
+		"[root] provider[\"registry.terraform.io/hashicorp/azurerm\"]" [label = "provider[\"registry.terraform.io/hashicorp/azurerm\"]", shape = "diamond"]
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"]" [label = "provider[\"registry.terraform.io/hashicorp/google\"]", shape = "diamond"]
+		"[root] provider[\"registry.terraform.io/hashicorp/local\"]" [label = "provider[\"registry.terraform.io/hashicorp/local\"]", shape = "diamond"]
+		"[root] provider[\"registry.terraform.io/hashicorp/random\"]" [label = "provider[\"registry.terraform.io/hashicorp/random\"]", shape = "diamond"]
+		"[root] provider[\"registry.terraform.io/hashicorp/template\"]" [label = "provider[\"registry.terraform.io/hashicorp/template\"]", shape = "diamond"]
+		"[root] random_pet.keyname (expand)" [label = "random_pet.keyname", shape = "box"]
+		"[root] random_shuffle.aws_zones (expand)" [label = "random_shuffle.aws_zones", shape = "box"]
+		"[root] random_shuffle.google_regions (expand)" [label = "random_shuffle.google_regions", shape = "box"]
+		"[root] random_shuffle.google_zones (expand)" [label = "random_shuffle.google_zones", shape = "box"]
+		"[root] var.aws_instance_type" [label = "var.aws_instance_type", shape = "note"]
+		"[root] var.azure_instance_image_offer" [label = "var.azure_instance_image_offer", shape = "note"]
+		"[root] var.azure_instance_image_publisher" [label = "var.azure_instance_image_publisher", shape = "note"]
+		"[root] var.azure_instance_image_sku" [label = "var.azure_instance_image_sku", shape = "note"]
+		"[root] var.azure_instance_image_version" [label = "var.azure_instance_image_version", shape = "note"]
+		"[root] var.azure_instance_machine_type" [label = "var.azure_instance_machine_type", shape = "note"]
+		"[root] var.azure_resource_group_location" [label = "var.azure_resource_group_location", shape = "note"]
+		"[root] var.azure_resource_group_name" [label = "var.azure_resource_group_name", shape = "note"]
+		"[root] var.google_instance_image" [label = "var.google_instance_image", shape = "note"]
+		"[root] var.google_instance_machine_type" [label = "var.google_instance_machine_type", shape = "note"]
+		"[root] var.google_instance_tags" [label = "var.google_instance_tags", shape = "note"]
+		"[root] var.google_provider_project" [label = "var.google_provider_project", shape = "note"]
+		"[root] var.ssh_priv_key_file" [label = "var.ssh_priv_key_file", shape = "note"]
+		"[root] var.ssh_pub_key_file" [label = "var.ssh_pub_key_file", shape = "note"]
+		"[root] var.ssh_user" [label = "var.ssh_user", shape = "note"]
+		"[root] var.vault_instance_count" [label = "var.vault_instance_count", shape = "note"]
+		"[root] var.vault_tcp_ports" [label = "var.vault_tcp_ports", shape = "note"]
+		"[root] aws_instance.aws_vault (expand)" -> "[root] aws_key_pair.key (expand)"
+		"[root] aws_instance.aws_vault (expand)" -> "[root] data.aws_ami.ubuntu (expand)"
+		"[root] aws_instance.aws_vault (expand)" -> "[root] random_shuffle.aws_zones (expand)"
+		"[root] aws_instance.aws_vault (expand)" -> "[root] var.aws_instance_type"
+		"[root] aws_instance.aws_vault (expand)" -> "[root] var.ssh_priv_key_file"
+		"[root] aws_instance.aws_vault (expand)" -> "[root] var.ssh_user"
+		"[root] aws_instance.aws_vault (expand)" -> "[root] var.vault_instance_count"
+		"[root] aws_key_pair.key (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_key_pair.key (expand)" -> "[root] random_pet.keyname (expand)"
+		"[root] aws_key_pair.key (expand)" -> "[root] var.ssh_pub_key_file"
+		"[root] azurerm_linux_virtual_machine.azure_vault (expand)" -> "[root] azurerm_network_interface.vault_nic (expand)"
+		"[root] azurerm_linux_virtual_machine.azure_vault (expand)" -> "[root] data.template_file.vault_install (expand)"
+		"[root] azurerm_linux_virtual_machine.azure_vault (expand)" -> "[root] var.azure_instance_image_offer"
+		"[root] azurerm_linux_virtual_machine.azure_vault (expand)" -> "[root] var.azure_instance_image_publisher"
+		"[root] azurerm_linux_virtual_machine.azure_vault (expand)" -> "[root] var.azure_instance_image_sku"
+		"[root] azurerm_linux_virtual_machine.azure_vault (expand)" -> "[root] var.azure_instance_image_version"
+		"[root] azurerm_linux_virtual_machine.azure_vault (expand)" -> "[root] var.azure_instance_machine_type"
+		"[root] azurerm_linux_virtual_machine.azure_vault (expand)" -> "[root] var.ssh_pub_key_file"
+		"[root] azurerm_linux_virtual_machine.azure_vault (expand)" -> "[root] var.ssh_user"
+		"[root] azurerm_network_interface.vault_nic (expand)" -> "[root] azurerm_public_ip.azure_vault_public_ip (expand)"
+		"[root] azurerm_network_interface.vault_nic (expand)" -> "[root] azurerm_subnet.vault_subnet (expand)"
+		"[root] azurerm_network_interface_security_group_association.association (expand)" -> "[root] azurerm_network_interface.vault_nic (expand)"
+		"[root] azurerm_network_interface_security_group_association.association (expand)" -> "[root] azurerm_network_security_group.vault_nsg (expand)"
+		"[root] azurerm_network_security_group.vault_nsg (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/azurerm\"]"
+		"[root] azurerm_network_security_group.vault_nsg (expand)" -> "[root] var.azure_resource_group_location"
+		"[root] azurerm_network_security_group.vault_nsg (expand)" -> "[root] var.azure_resource_group_name"
+		"[root] azurerm_public_ip.azure_vault_public_ip (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/azurerm\"]"
+		"[root] azurerm_public_ip.azure_vault_public_ip (expand)" -> "[root] var.azure_resource_group_location"
+		"[root] azurerm_public_ip.azure_vault_public_ip (expand)" -> "[root] var.azure_resource_group_name"
+		"[root] azurerm_public_ip.azure_vault_public_ip (expand)" -> "[root] var.vault_instance_count"
+		"[root] azurerm_subnet.vault_subnet (expand)" -> "[root] azurerm_virtual_network.vault_virtual_network (expand)"
+		"[root] azurerm_virtual_network.vault_virtual_network (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/azurerm\"]"
+		"[root] azurerm_virtual_network.vault_virtual_network (expand)" -> "[root] var.azure_resource_group_location"
+		"[root] azurerm_virtual_network.vault_virtual_network (expand)" -> "[root] var.azure_resource_group_name"
+		"[root] data.aws_ami.ubuntu (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] data.aws_availability_zones.available (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] data.google_compute_regions.available (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/google\"]"
+		"[root] data.google_compute_zones.available (expand)" -> "[root] random_shuffle.google_regions (expand)"
+		"[root] data.template_file.vault_install (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/template\"]"
+		"[root] google_compute_firewall.vault-server (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/google\"]"
+		"[root] google_compute_firewall.vault-server (expand)" -> "[root] var.google_instance_tags"
+		"[root] google_compute_firewall.vault-server (expand)" -> "[root] var.vault_tcp_ports"
+		"[root] google_compute_instance.google_vault (expand)" -> "[root] random_shuffle.google_zones (expand)"
+		"[root] google_compute_instance.google_vault (expand)" -> "[root] var.google_instance_image"
+		"[root] google_compute_instance.google_vault (expand)" -> "[root] var.google_instance_machine_type"
+		"[root] google_compute_instance.google_vault (expand)" -> "[root] var.google_instance_tags"
+		"[root] google_compute_instance.google_vault (expand)" -> "[root] var.ssh_pub_key_file"
+		"[root] google_compute_instance.google_vault (expand)" -> "[root] var.ssh_user"
+		"[root] google_compute_instance.google_vault (expand)" -> "[root] var.vault_instance_count"
+		"[root] local_file.ansible_inventory (expand)" -> "[root] aws_instance.aws_vault (expand)"
+		"[root] local_file.ansible_inventory (expand)" -> "[root] azurerm_linux_virtual_machine.azure_vault (expand)"
+		"[root] local_file.ansible_inventory (expand)" -> "[root] google_compute_instance.google_vault (expand)"
+		"[root] local_file.ansible_inventory (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/local\"]"
+		"[root] output.aws_vault_adddresses" -> "[root] aws_instance.aws_vault (expand)"
+		"[root] output.azure_vault_adddresses" -> "[root] azurerm_linux_virtual_machine.azure_vault (expand)"
+		"[root] output.google_vault_adddresses" -> "[root] google_compute_instance.google_vault (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_instance.aws_vault (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/azurerm\"] (close)" -> "[root] azurerm_linux_virtual_machine.azure_vault (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/azurerm\"] (close)" -> "[root] azurerm_network_interface_security_group_association.association (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"] (close)" -> "[root] google_compute_firewall.vault-server (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"] (close)" -> "[root] google_compute_instance.google_vault (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"]" -> "[root] var.google_provider_project"
+		"[root] provider[\"registry.terraform.io/hashicorp/local\"] (close)" -> "[root] local_file.ansible_inventory (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/random\"] (close)" -> "[root] random_pet.keyname (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/random\"] (close)" -> "[root] random_shuffle.aws_zones (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/random\"] (close)" -> "[root] random_shuffle.google_zones (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/template\"] (close)" -> "[root] data.template_file.vault_install (expand)"
+		"[root] random_pet.keyname (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/random\"]"
+		"[root] random_shuffle.aws_zones (expand)" -> "[root] data.aws_availability_zones.available (expand)"
+		"[root] random_shuffle.aws_zones (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/random\"]"
+		"[root] random_shuffle.google_regions (expand)" -> "[root] data.google_compute_regions.available (expand)"
+		"[root] random_shuffle.google_regions (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/random\"]"
+		"[root] random_shuffle.google_zones (expand)" -> "[root] data.google_compute_zones.available (expand)"
+		"[root] root" -> "[root] output.aws_vault_adddresses"
+		"[root] root" -> "[root] output.azure_vault_adddresses"
+		"[root] root" -> "[root] output.google_vault_adddresses"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/azurerm\"] (close)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/google\"] (close)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/local\"] (close)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/random\"] (close)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/template\"] (close)"
+	}
+}
+
